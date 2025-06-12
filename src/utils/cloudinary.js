@@ -19,7 +19,14 @@ import fs from "fs"; // file system
             })
 
             // file has been uploaded successfully
-            console.log("File is uploaded on cloudinary", response.url);
+
+            // console.log("File is uploaded on cloudinary", response.url);
+
+            // console.log(response) ---> for understanding data purpose 
+
+            // unlinking file 
+            fs.unlinkSync(localFilePath)
+
             return response
         } catch (error) {
             fs.unlinkSync(localFilePath) // removes the locally saved temperary file as the upload operation got failed
